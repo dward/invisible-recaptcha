@@ -189,7 +189,7 @@ class InvisibleReCaptcha
     protected function sendVerifyRequest(array $query = [])
     {
         $response = $this->client->post(static::VERIFY_URI, [
-            'form_params' => $query,
+            'body' => $query,
         ]);
 
         return json_decode($response->getBody(), true);
